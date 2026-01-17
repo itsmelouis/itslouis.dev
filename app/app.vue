@@ -17,9 +17,8 @@ useHead({
 <template>
   <div class="dot-background fixed inset-0 -z-10" />
   <UApp>
-    <main class="min-h-screen p-8">
-      <ThemeToggle class="fixed top-4 right-4" />
+    <NuxtLayout>
       <NuxtPage />
-    </main>
+    </NuxtLayout>
   </UApp>
 </template>
