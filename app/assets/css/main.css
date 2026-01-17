@@ -1,6 +1,16 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
+:root {
+  --c-scrollbar: #eee;
+  --c-scrollbar-hover: #bbb;
+}
+
+.dark {
+  --c-scrollbar: #111;
+  --c-scrollbar-hover: #222;
+}
+
 .dot-background {
   background-image: radial-gradient(rgba(0, 0, 0, 0.15) 1px, transparent 1px);
   background-size: 24px 24px;
@@ -30,6 +40,33 @@
 
 .dark::view-transition-new(root) {
   z-index: 1;
+}
+
+* {
+  scrollbar-color: var(--c-scrollbar) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 6px;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+  background: transparent;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--c-scrollbar);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--c-scrollbar-hover);
 }
 
 @theme static {
