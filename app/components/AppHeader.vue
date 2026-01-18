@@ -1,5 +1,7 @@
 <script setup lang="ts">
 const scroll = ref(0)
+const colorMode = useColorMode()
+const logoSrc = computed(() => (colorMode.value === 'dark' ? '/logo-light.svg' : '/logo-dark.svg'))
 
 function updateScroll() {
   scroll.value = window.scrollY
@@ -27,9 +29,9 @@ onUnmounted(() => {
     <NuxtLink
       to="/"
       aria-label="Home"
-      class="absolute xl:fixed m-5 w-12 h-12 select-none outline-none"
+      class="absolute xl:fixed m-5 w-12 h-12 select-none outline-none hover:-rotate-12 transition-transform"
     >
-      <img src="/logo.png" alt="Logo" class="w-full h-full object-contain">
+      <img :src="logoSrc" alt="Louis logo" class="w-full h-full object-contain">
     </NuxtLink>
 
     <button
@@ -45,7 +47,7 @@ onUnmounted(() => {
       <div />
       <div class="flex items-center gap-5 print:opacity-0">
         <NuxtLink
-          to="/posts"
+          to="#"
           title="Blog"
           class="flex items-center opacity-60 hover:opacity-100 transition-opacity duration-200 outline-none"
         >
@@ -53,7 +55,7 @@ onUnmounted(() => {
           <UIcon name="i-lucide-file-text" class="md:hidden" />
         </NuxtLink>
         <NuxtLink
-          to="/projects"
+          to="#"
           title="Projects"
           class="flex items-center opacity-60 hover:opacity-100 transition-opacity duration-200 outline-none"
         >

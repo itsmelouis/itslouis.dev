@@ -72,15 +72,15 @@
 @theme static {
   --font-sans: 'Inter', sans-serif;
 
-  --color-green-50: #EFFDF5;
-  --color-green-100: #D9FBE8;
-  --color-green-200: #B3F5D1;
-  --color-green-300: #75EDAE;
-  --color-green-400: #00DC82;
-  --color-green-500: #00C16A;
-  --color-green-600: #00A155;
-  --color-green-700: #007F45;
-  --color-green-800: #016538;
-  --color-green-900: #0A5331;
-  --color-green-950: #052E16;
+  --color-graphite-50: #fafafa;
+  --color-graphite-100: #f5f5f5;
+  --color-graphite-200: #e5e5e5;
+  --color-graphite-300: #d4d4d4;
+  --color-graphite-400: #a3a3a3;
+  --color-graphite-500: #888888;
+  --color-graphite-600: #6b6b6b;
+  --color-graphite-700: #555555;
+  --color-graphite-800: #333333;
+  --color-graphite-900: #222222;
+  --color-graphite-950: #050505;
 }
