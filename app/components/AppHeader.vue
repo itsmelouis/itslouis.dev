@@ -1,7 +1,5 @@
 <script setup lang="ts">
 const scroll = ref(0)
-const colorMode = useColorMode()
-const logoSrc = computed(() => (colorMode.value === 'dark' ? '/logo-light.svg' : '/logo-dark.svg'))
 
 function updateScroll() {
   scroll.value = window.scrollY
@@ -31,7 +29,8 @@ onUnmounted(() => {
       aria-label="Home"
       class="absolute xl:fixed m-5 w-12 h-12 select-none outline-none hover:-rotate-12 transition-transform"
     >
-      <img :src="logoSrc" alt="Louis logo" class="w-full h-full object-contain">
+      <img src="/logo-dark.svg" alt="Louis logo" class="w-full h-full object-contain dark:hidden">
+      <img src="/logo-light.svg" alt="Louis logo" class="w-full h-full object-contain hidden dark:block">
     </NuxtLink>
 
     <button
