@@ -1,3 +1,9 @@
+<script setup lang="ts">
+useHead({
+  title: 'Home',
+})
+</script>
+
 <template>
   <SlidingEnter>
     <section class="max-w-3xl space-y-6 m-auto">
