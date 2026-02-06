@@ -1,7 +1,14 @@
 <script setup lang="ts">
 import { useWindowScroll } from '@vueuse/core'
 
+const route = useRoute()
 const { y: scroll } = useWindowScroll()
+
+const breadcrumb = computed(() => {
+  if (route.path === '/')
+    return ''
+  return `~${route.path}`
+})
 
 function toTop() {
   window.scrollTo({
@@ -13,14 +20,18 @@ function toTop() {
 
 <template>
   <header class="z-40">
-    <NuxtLink
-      to="/"
-      aria-label="Home"
-      class="absolute xl:fixed m-5 w-12 h-12 select-none outline-none hover:-rotate-12 transition-transform"
-    >
-      <img src="/logo-dark.svg" alt="Louis logo" class="w-full h-full object-contain dark:hidden">
-      <img src="/logo-light.svg" alt="Louis logo" class="w-full h-full object-contain hidden dark:block">
-    </NuxtLink>
+    <div class="absolute xl:fixed m-5 flex items-center gap-3">
+      <NuxtLink
+        to="/"
+        aria-label="Home"
+        class="w-12 h-12 select-none outline-none hover:-rotate-12 transition-transform"
+      >
+        <img src="/logo-light.svg" alt="Louis logo" class="w-full h-full object-contain rounded-lg border border-neutral-300 dark:border-transparent">
+      </NuxtLink>
+      <span v-if="breadcrumb" class="text-sm font-mono text-neutral-400 dark:text-neutral-500">
+        {{ breadcrumb }}
+      </span>
+    </div>
 
     <button
       title="Scroll to top"
