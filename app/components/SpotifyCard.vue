@@ -16,8 +16,9 @@ const trackUrl = computed(() =>
       leave-from-class="opacity-100 translate-y-0"
       leave-to-class="opacity-0 translate-y-2"
     >
-      <div
+      <aside
         v-if="spotify"
+        aria-label="Now playing on Spotify"
         class="hidden lg:block fixed bottom-5 left-5 z-50"
       >
         <UTooltip
@@ -61,7 +62,7 @@ const trackUrl = computed(() =>
             </span>
           </div>
         </UTooltip>
-      </div>
+      </aside>
     </Transition>
   </ClientOnly>
 </template>
