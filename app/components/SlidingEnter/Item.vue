@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { Motion } from 'motion-v'
-
 const props = withDefaults(defineProps<{
   as?: string
 }>(), {
@@ -9,16 +7,33 @@ const props = withDefaults(defineProps<{
 
 const getIndex = inject<() => number>('slidingEnterIndex', () => 0)
 const index = getIndex()
-const delay = index * 0.12
+const delay = `${index * 120}ms`
 </script>
 
 <template>
-  <Motion
+  <component
     :is="props.as"
-    :initial="{ opacity: 0, y: 10 }"
-    :animate="{ opacity: 1, y: 0 }"
-    :transition="{ duration: 0.6, ease: 'easeOut', delay }"
+    class="sliding-enter-item"
+    :style="{ animationDelay: delay }"
   >
     <slot />
-  </Motion>
+  </component>
 </template>
+
+<style scoped>
+.sliding-enter-item {
+  opacity: 0;
+  animation: slidingEnter 0.6s ease-out both;
+}
+
+@keyframes slidingEnter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>

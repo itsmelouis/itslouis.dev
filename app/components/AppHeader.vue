@@ -1,9 +1,7 @@
 <script setup lang="ts">
-const scroll = ref(0)
+import { useWindowScroll } from '@vueuse/core'
 
-function updateScroll() {
-  scroll.value = window.scrollY
-}
+const { y: scroll } = useWindowScroll()
 
 function toTop() {
   window.scrollTo({
@@ -11,15 +9,6 @@ function toTop() {
     behavior: 'smooth',
   })
 }
-
-onMounted(() => {
-  window.addEventListener('scroll', updateScroll, { passive: true })
-  updateScroll()
-})
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', updateScroll)
-})
 </script>
 
 <template>
