@@ -54,7 +54,7 @@ function toTop() {
           <UIcon name="i-lucide-file-text" class="md:hidden" />
         </NuxtLink>
         <NuxtLink
-          to="#"
+          to="/projects"
           title="Projects"
           class="flex items-center opacity-60 hover:opacity-100 transition-opacity duration-200 outline-none"
         >
