@@ -2,7 +2,7 @@
   "name": "itslouis-dev",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@10.28.2",
+  "packageManager": "pnpm@10.30.3",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -13,17 +13,17 @@
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {
-    "@iconify-json/lucide": "^1.2.82",
-    "@iconify-json/simple-icons": "^1.2.63",
+    "@iconify-json/lucide": "^1.2.95",
+    "@iconify-json/simple-icons": "^1.2.72",
     "@nuxt/a11y": "1.0.0-alpha.1",
-    "@nuxt/ui": "^4.3.0",
+    "@nuxt/ui": "^4.5.1",
     "nuxt": "^4.2.2"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^7.0.1",
-    "@nuxt/eslint": "^1.12.1",
-    "eslint": "^9.39.2",
+    "@antfu/eslint-config": "^7.6.1",
+    "@nuxt/eslint": "^1.15.2",
+    "eslint": "^9.39.3",
     "typescript": "^5.9.3",
-    "vue-tsc": "^3.2.1"
+    "vue-tsc": "^3.2.5"
   }
 }
