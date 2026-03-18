@@ -17,7 +17,7 @@
     "@iconify-json/simple-icons": "^1.2.72",
     "@nuxt/a11y": "1.0.0-alpha.1",
     "@nuxt/ui": "^4.5.1",
-    "nuxt": "^4.3.1"
+    "nuxt": "^4.4.2"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^7.7.0",
