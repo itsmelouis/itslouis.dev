@@ -6,7 +6,7 @@ const { y: scroll } = useWindowScroll()
 
 const breadcrumb = computed(() => {
   if (route.path === '/')
-    return ''
+    return '~/'
   return `~${route.path}`
 })
 
@@ -28,7 +28,7 @@ function toTop() {
       >
         <img src="/logo-light.svg" alt="Louis logo" class="w-full h-full object-contain rounded-lg border border-neutral-300 dark:border-transparent">
       </NuxtLink>
-      <span v-if="breadcrumb" class="text-sm font-mono text-neutral-400 dark:text-neutral-500">
+      <span v-if="breadcrumb" class="text-sm font-mono text-neutral-400 dark:text-neutral-500 select-none">
         {{ breadcrumb }}
       </span>
     </div>
