@@ -21,4 +21,9 @@ export default withNuxt(
       'public',
     ],
   }),
+  {
+    rules: {
+      'e18e/prefer-static-regex': 'off',
+    },
+  },
 )
