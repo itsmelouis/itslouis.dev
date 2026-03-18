@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useHead({
   title: 'Louis F.',
-  titleTemplate: '%s — itslouis.dev',
+  titleTemplate: '%s | itslouis.dev',
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     { name: 'author', content: 'Louis' },
