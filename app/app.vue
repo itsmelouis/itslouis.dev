@@ -26,4 +26,5 @@ useHead({
       <NuxtPage />
     </NuxtLayout>
   </UApp>
+  <NuxtLoadingIndicator color="var(--loading-bar-color)" :height="3" :throttle="0" />
 </template>
