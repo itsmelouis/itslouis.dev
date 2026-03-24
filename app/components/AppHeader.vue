@@ -63,12 +63,13 @@ function toTop() {
     </nav>
   </header>
 
-  <button
+  <UButton
+    icon="i-lucide-arrow-up"
+    color="neutral"
+    variant="ghost"
     title="Scroll to top"
-    class="fixed right-3 bottom-3 flex items-center justify-center w-10 h-10 rounded-full transition-opacity duration-300 z-100 print:hidden hover:bg-neutral-500/20 cursor-pointer"
+    class="fixed right-3 bottom-3 z-100 print:hidden transition-opacity duration-300"
     :class="scroll > 300 ? 'opacity-30 hover:opacity-100' : 'opacity-0 pointer-events-none'"
     @click="toTop()"
-  >
-    <UIcon name="i-lucide-arrow-up" class="w-5 h-5" />
-  </button>
+  />
 </template>
