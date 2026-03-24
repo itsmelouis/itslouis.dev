@@ -125,6 +125,6 @@ Don't use Claude Code for anything you can write faster yourself: simple refacto
 
 ## Is it worth it on WSL?
 
-Yes, but the tooling around it matters. The friction of managing MCP servers that live on the Windows side is real. chrome-wsl solves the Chrome side cleanly, and wrapping everything in a start script removes the last bit of manual overhead.
+Yes, but the tooling around it matters. WSL is where I do all my development: the Linux toolchain, Bash, Unix conventions. Claude Code fits naturally into that environment. The friction of managing MCP servers that live on the Windows side is real, but it's a one-time setup cost. chrome-wsl solves the Chrome side cleanly, and wrapping everything in a start script removes the last bit of manual overhead.
 
 If you're on a similar setup, start with the wrapper script. The two minutes it takes to write will save you the context switch every time you open a new session.
