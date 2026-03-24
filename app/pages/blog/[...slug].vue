@@ -70,7 +70,7 @@ function formatDate(dateStr: string) {
           highlight
           highlight-color="neutral"
           :ui="{
-            root: 'sticky top-28 overflow-y-auto',
+            root: 'sticky top-28 overflow-y-auto bg-transparent',
             container: 'flex flex-col gap-2 lg:py-0 lg:border-0',
             title: 'text-xs font-mono uppercase tracking-widest text-neutral-500',
             content: 'ms-0',
