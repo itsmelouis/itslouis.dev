@@ -34,6 +34,10 @@ export default defineNuxtConfig({
     '/': { prerender: true },
   },
 
+  colorMode: {
+    storage: 'cookie',
+  },
+
   compatibilityDate: '2025-01-15',
 
   eslint: {
