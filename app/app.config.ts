@@ -1,5 +1,10 @@
 export default defineAppConfig({
   ui: {
+    prose: {
+      codeIcon: {
+        sh: 'i-vscode-icons-file-type-shell',
+      },
+    },
     colors: {
       primary: 'graphite',
       neutral: 'graphite',
