@@ -1,11 +1,18 @@
 <script setup lang="ts">
+useSeoMeta({
+  description: 'Software engineer finishing my master\'s degree. I build fast, clean interfaces with Nuxt and Vue, and backend systems with .NET.',
+  ogSiteName: 'itslouis.dev',
+  ogType: 'website',
+  twitterCard: 'summary_large_image',
+  twitterCreator: '@itsmelouis_',
+})
+
 useHead({
   title: 'Louis F.',
   titleTemplate: '%s | itslouis.dev',
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-    { name: 'author', content: 'Louis' },
-    { name: 'revisit-after', content: '7 days' },
+    { name: 'author', content: 'Louis F.' },
   ],
   link: [
     { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
