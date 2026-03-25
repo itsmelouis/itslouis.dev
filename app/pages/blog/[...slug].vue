@@ -14,6 +14,9 @@ useHead({
 
 const toc = computed(() => post.value?.body?.toc?.links ?? [])
 
+const articleRef = useTemplateRef<HTMLElement>('article')
+const { progress } = useReadingProgress(articleRef)
+
 const readingTime = computed(() => {
   if (!post.value?.body)
     return 1
@@ -33,6 +36,13 @@ function formatDate(dateStr: string) {
 
 <template>
   <div class="slide-enter-content max-w-4xl m-auto px-4">
+    <Teleport to="body">
+      <div
+        class="fixed top-0 left-0 z-50 h-[3px] w-full origin-left transition-transform duration-100 ease-out"
+        :style="{ transform: `scaleX(${progress / 100})`, backgroundColor: 'var(--loading-bar-color)' }"
+        aria-hidden="true"
+      />
+    </Teleport>
     <NuxtLink
       to="/blog"
       class="inline-flex items-center gap-1 text-sm text-neutral-400 hover:text-neutral-200 transition-colors mb-8"
@@ -59,11 +69,11 @@ function formatDate(dateStr: string) {
     </div>
 
     <div class="lg:grid lg:grid-cols-[1fr_220px] lg:gap-12">
-      <article class="prose prose-neutral dark:prose-invert max-w-none prose-code:font-mono prose-code:text-sm prose-pre:rounded-lg prose-pre:border prose-pre:border-neutral-200 dark:prose-pre:border-neutral-800">
+      <article ref="article" class="prose prose-neutral dark:prose-invert max-w-none prose-code:font-mono prose-code:text-sm prose-pre:rounded-lg prose-pre:border prose-pre:border-neutral-200 dark:prose-pre:border-neutral-800">
         <ContentRenderer :value="post!" />
       </article>
 
-      <aside v-if="toc.length" class="hidden lg:block">
+      <aside v-if="toc.length" aria-label="Table of contents" class="hidden lg:block">
         <UContentToc
           :links="toc"
           title="On this page"
