@@ -1,6 +1,28 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxt/eslint', '@nuxt/ui', '@nuxt/a11y'],
+  modules: [
+    '@nuxt/eslint',
+    '@nuxt/ui',
+    '@nuxt/a11y',
+    '@nuxt/content',
+  ],
+
+  content: {
+    experimental: {
+      nativeSqlite: true,
+    },
+    build: {
+      markdown: {
+        highlight: {
+          theme: {
+            default: 'github-light',
+            dark: 'github-dark',
+          },
+          langs: ['vue', 'typescript', 'javascript', 'bash', 'yaml', 'json', 'css'],
+        },
+      },
+    },
+  },
 
   devtools: {
     enabled: true,
@@ -10,6 +32,10 @@ export default defineNuxtConfig({
 
   routeRules: {
     '/': { prerender: true },
+  },
+
+  colorMode: {
+    storage: 'cookie',
   },
 
   compatibilityDate: '2025-01-15',
@@ -25,6 +51,7 @@ export default defineNuxtConfig({
       include: [
         '@vue/devtools-core',
         '@vue/devtools-kit',
+        '@vueuse/core',
       ],
     },
   },
