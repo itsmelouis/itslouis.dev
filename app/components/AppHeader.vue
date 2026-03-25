@@ -33,7 +33,7 @@ function toTop() {
       </span>
     </div>
 
-    <nav class="flex items-center gap-5 shrink-0 print:opacity-0">
+    <nav aria-label="Main navigation" class="flex items-center gap-5 shrink-0 print:opacity-0">
       <NuxtLink
         to="/blog"
         title="Blog"
