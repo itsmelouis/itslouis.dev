@@ -53,20 +53,44 @@ Then add the MCP server to your Claude Code config:
 
 ### Automating the start/stop
 
-Running `npx @dbalabka/chrome-wsl` manually before every session gets old fast. A simple wrapper script handles it:
+Running `chrome-wsl` manually before every session gets old fast. [Claude Code hooks](https://docs.anthropic.com/en/docs/claude-code/hooks) handle it automatically instead.
 
-```bash [~/start-claude.sh]
-#!/bin/bash
-npx @dbalabka/chrome-wsl
-claude
-npx @dbalabka/chrome-wsl --stop
-```
-
+Install the package globally so the binary is available:
 ```bash
-chmod +x ~/start-claude.sh
+npm install -g @dbalabka/chrome-wsl
 ```
 
-Now `./start-claude.sh` starts the proxy, opens Claude Code, and cleans up automatically when you exit.
+Then add these hooks to `~/.claude/settings.json`:
+```json [~/.claude/settings.json]
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "chrome-wsl"
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "chrome-wsl --stop"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+Chrome starts automatically when Claude Code opens, and shuts down cleanly when you exit with `/exit`.
 
 ## Giving Claude Code more context with skills
 
