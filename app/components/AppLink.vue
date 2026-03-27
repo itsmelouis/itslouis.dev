@@ -1,7 +1,6 @@
 <script setup lang="ts">
 defineProps<{
   to: string
-  external?: boolean
   target?: string
 }>()
 </script>
@@ -9,7 +8,6 @@ defineProps<{
 <template>
   <NuxtLink
     :to="to"
-    :external="external"
     :target="target"
     class="app-link font-mono no-underline text-neutral-900 dark:text-neutral-100 bg-bottom bg-no-repeat transition-all duration-300 ease-in-out hover:text-neutral-100 dark:hover:text-neutral-900"
   >
