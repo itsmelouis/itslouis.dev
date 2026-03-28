@@ -1,6 +1,23 @@
 <script setup lang="ts">
-useHead({
+const config = useRuntimeConfig()
+const siteUrl = config.public.siteUrl
+
+const description = 'Thoughts on the projects I\'m building and the things I\'m learning along the way.'
+
+useSeoMeta({
   title: 'Blog',
+  description,
+  ogTitle: 'Blog | itslouis.dev',
+  ogDescription: description,
+  ogUrl: `${siteUrl}/blog`,
+  ogImage: `${siteUrl}/og/blog.png`,
+  twitterTitle: 'Blog | itslouis.dev',
+  twitterDescription: description,
+  twitterImage: `${siteUrl}/og/blog.png`,
+})
+
+useHead({
+  link: [{ rel: 'canonical', href: `${siteUrl}/blog` }],
 })
 
 const { data: posts } = await useAsyncData('blog', () =>
@@ -73,7 +90,7 @@ function formatDate(dateStr: string) {
               </span>
             </div>
           </div>
-          <span class="text-xs text-neutral-400 font-mono shrink-0 mt-0.5">
+          <span class="text-xs text-neutral-500 dark:text-neutral-400 font-mono shrink-0 mt-0.5">
             {{ formatDate(post.date) }}
           </span>
         </NuxtLink>

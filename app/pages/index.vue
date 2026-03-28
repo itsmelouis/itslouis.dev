@@ -1,6 +1,38 @@
 <script setup lang="ts">
+const config = useRuntimeConfig()
+const siteUrl = config.public.siteUrl
+
+const description = 'Software engineer finishing my master\'s degree. I build fast, clean interfaces with Nuxt and Vue, and backend systems with .NET.'
+
+useSeoMeta({
+  title: 'Louis F. – Software Engineer',
+  description,
+  ogTitle: 'Louis F. – Software Engineer',
+  ogDescription: description,
+  ogUrl: siteUrl,
+  ogImage: `${siteUrl}/og/home.png`,
+  twitterTitle: 'Louis F. – Software Engineer',
+  twitterDescription: description,
+  twitterImage: `${siteUrl}/og/home.png`,
+})
+
 useHead({
-  title: 'Home',
+  link: [{ rel: 'canonical', href: siteUrl }],
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        'name': 'Louis F.',
+        'url': siteUrl,
+        'jobTitle': 'Software Engineer',
+        'sameAs': [
+          'https://github.com/itsmelouis',
+        ],
+      }),
+    },
+  ],
 })
 </script>
 

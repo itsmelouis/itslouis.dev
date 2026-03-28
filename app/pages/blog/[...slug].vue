@@ -1,5 +1,7 @@
 <script setup lang="ts">
 const route = useRoute()
+const config = useRuntimeConfig()
+const siteUrl = config.public.siteUrl
 
 const { data: post } = await useAsyncData(route.path, () =>
   queryCollection('blog').path(route.path).first())
@@ -8,8 +10,51 @@ if (!post.value) {
   throw createError({ statusCode: 404, statusMessage: 'Post not found' })
 }
 
-useHead({
+const slug = route.path.replace('/blog/', '')
+const ogImageUrl = post.value.ogImage ?? `${siteUrl}/og/${slug}.png`
+const canonicalUrl = `${siteUrl}${route.path}`
+
+useSeoMeta({
   title: post.value.title,
+  description: post.value.description,
+  ogTitle: post.value.title,
+  ogDescription: post.value.description,
+  ogUrl: canonicalUrl,
+  ogImage: ogImageUrl,
+  ogType: 'article',
+  articlePublishedTime: post.value.date,
+  articleTag: post.value.tags,
+  twitterTitle: post.value.title,
+  twitterDescription: post.value.description,
+  twitterImage: ogImageUrl,
+})
+
+useHead({
+  link: [{ rel: 'canonical', href: canonicalUrl }],
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        'headline': post.value.title,
+        'description': post.value.description,
+        'datePublished': post.value.date,
+        'url': canonicalUrl,
+        'image': ogImageUrl,
+        'author': {
+          '@type': 'Person',
+          'name': 'Louis F.',
+          'url': siteUrl,
+        },
+        'publisher': {
+          '@type': 'Person',
+          'name': 'Louis F.',
+          'url': siteUrl,
+        },
+      }),
+    },
+  ],
 })
 
 const toc = computed(() => post.value?.body?.toc?.links ?? [])
@@ -55,9 +100,9 @@ function formatDate(dateStr: string) {
       <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight">
         {{ post!.title }}
       </h1>
-      <div class="flex flex-wrap items-center gap-3 mt-3 text-sm text-neutral-500">
+      <div class="flex flex-wrap items-center gap-3 mt-3 text-sm text-neutral-600 dark:text-neutral-400">
         <span class="font-mono">{{ formatDate(post!.date) }}</span>
-        <span class="font-mono text-neutral-400">~{{ readingTime }} min read</span>
+        <span class="font-mono">~{{ readingTime }} min read</span>
         <span
           v-for="tag in post!.tags"
           :key="tag"
