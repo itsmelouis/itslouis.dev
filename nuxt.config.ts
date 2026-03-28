@@ -52,10 +52,6 @@ export default defineNuxtConfig({
     storage: 'cookie',
   },
 
-  colorMode: {
-    storage: 'cookie',
-  },
-
   compatibilityDate: '2025-01-15',
 
   eslint: {
