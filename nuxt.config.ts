@@ -44,8 +44,8 @@ export default defineNuxtConfig({
     '/blog/**': { prerender: true },
     // External GitHub API — serve cached SSR, revalidate every hour
     '/projects': { swr: 3600 },
-    // Sitemap — cache 24h, regenerated on next request after expiry
-    '/sitemap.xml': { swr: 86400 },
+    // Sitemap — prerendered at build time (content doesn't change between deploys)
+    '/sitemap.xml': { prerender: true },
   },
 
   colorMode: {
