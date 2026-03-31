@@ -60,7 +60,7 @@ useHead({
     </p>
     <p class="text-lg text-neutral-600 dark:text-neutral-300">
       Want to build something together? Reach me at
-      <AppLink to="mailto:me@itslouis.dev">
+      <AppLink to="mailto:me@itslouis.dev?subject=itslouis.dev%20%7C%20">
         <span class="inline-flex items-center">me<UIcon name="i-carbon-at" class="align-[-0.2em]" />itslouis.dev</span>
       </AppLink>
       and we'll figure it out.
