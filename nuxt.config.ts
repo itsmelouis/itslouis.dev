@@ -36,16 +36,14 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
-  routeRules: {
-    // Fully static — prerender at build time (Nuxt Content markdown)
-    // Note: prerender causes _payload.json 500s in dev mode (expected, harmless)
-    '/': { prerender: true },
-    '/blog': { prerender: true },
-    '/blog/**': { prerender: true },
-    // External GitHub API — serve cached SSR, revalidate every hour
-    '/projects': { swr: 3600 },
-    // Sitemap — prerendered at build time (content doesn't change between deploys)
-    '/sitemap.xml': { prerender: true },
+  $production: {
+    routeRules: {
+      '/': { prerender: true },
+      '/blog': { prerender: true },
+      '/blog/**': { prerender: true },
+      '/projects': { swr: 3600 },
+      '/sitemap.xml': { prerender: true },
+    },
   },
 
   colorMode: {
