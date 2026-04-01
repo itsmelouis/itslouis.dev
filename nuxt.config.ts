@@ -11,7 +11,12 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxt/a11y',
     '@nuxt/content',
+    'nuxt-og-image',
   ],
+
+  site: {
+    url: 'https://itslouis.dev',
+  },
 
   content: {
     experimental: {
@@ -37,6 +42,9 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   $production: {
+    ogImage: {
+      zeroRuntime: true,
+    },
     routeRules: {
       '/': { prerender: true },
       '/blog': { prerender: true },

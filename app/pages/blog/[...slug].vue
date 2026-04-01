@@ -10,9 +10,13 @@ if (!post.value) {
   throw createError({ statusCode: 404, statusMessage: 'Post not found' })
 }
 
-const slug = route.path.replace('/blog/', '')
-const ogImageUrl = post.value.ogImage ?? `${siteUrl}/og/${slug}.png`
 const canonicalUrl = `${siteUrl}${route.path}`
+
+defineOgImage('BlogCard', {
+  title: post.value.title,
+  tags: post.value.tags ?? [],
+  date: post.value.date,
+})
 
 useSeoMeta({
   title: post.value.title,
@@ -20,13 +24,11 @@ useSeoMeta({
   ogTitle: post.value.title,
   ogDescription: post.value.description,
   ogUrl: canonicalUrl,
-  ogImage: ogImageUrl,
   ogType: 'article',
   articlePublishedTime: post.value.date,
   articleTag: post.value.tags,
   twitterTitle: post.value.title,
   twitterDescription: post.value.description,
-  twitterImage: ogImageUrl,
 })
 
 useHead({
@@ -41,7 +43,7 @@ useHead({
         'description': post.value.description,
         'datePublished': post.value.date,
         'url': canonicalUrl,
-        'image': ogImageUrl,
+
         'author': {
           '@type': 'Person',
           'name': 'Louis F.',
