@@ -26,12 +26,15 @@ importers:
       '@takumi-rs/core':
         specifier: 1.0.0-rc.12
         version: 1.0.0-rc.12(react@19.2.4)
+      '@takumi-rs/wasm':
+        specifier: 1.0.0-rc.12
+        version: 1.0.0-rc.12(react@19.2.4)
       nuxt:
         specifier: ^4.4.2
         version: 4.4.2(@babel/core@7.29.0)(@babel/plugin-syntax-jsx@7.28.6(@babel/core@7.29.0))(@parcel/watcher@2.5.6)(@types/node@25.5.0)(@vue/compiler-sfc@3.5.31)(better-sqlite3@12.8.0)(cac@6.7.14)(db0@0.3.4(better-sqlite3@12.8.0))(eslint@10.1.0(jiti@2.6.1))(ioredis@5.10.1)(lightningcss@1.32.0)(magicast@0.5.2)(optionator@0.9.4)(rollup-plugin-visualizer@7.0.1(rollup@4.60.0))(rollup@4.60.0)(terser@5.46.1)(typescript@5.9.3)(vite@7.3.1(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(terser@5.46.1)(yaml@2.8.3))(vue-tsc@3.2.6(typescript@5.9.3))(yaml@2.8.3)
       nuxt-og-image:
         specifier: 6.3.2
-        version: 6.3.2(1ab178a0a6d50c33a970d1afa646ea35)
+        version: 6.3.2(c335232cb68c560d4841ccbb08355b1b)
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^7.7.0
@@ -2042,6 +2045,9 @@ packages:
     peerDependenciesMeta:
       react-dom:
         optional: true
+
+  '@takumi-rs/wasm@1.0.0-rc.12':
+    resolution: {integrity: sha512-F4cid0g3At2jPcO/LfX10NjiJD3RvuBjsVpWv6LGeN+cYP65h9F5YGifwqSpTQ2IdPXLL1nctVGWjHe6CKN9tA==}
 
   '@tanstack/table-core@8.21.3':
     resolution: {integrity: sha512-ldZXEhOBb8Is7xLs01fR3YEc3DERiz5silj8tnGkFZytt1abEvl/GhUmCE0PMLaMPTa3Jk4HbKmRlHmu+gCftg==}
@@ -8634,6 +8640,13 @@ snapshots:
     dependencies:
       react: 19.2.4
 
+  '@takumi-rs/wasm@1.0.0-rc.12(react@19.2.4)':
+    dependencies:
+      '@takumi-rs/helpers': 1.0.0-rc.12(react@19.2.4)
+    transitivePeerDependencies:
+      - react
+      - react-dom
+
   '@tanstack/table-core@8.21.3': {}
 
   '@tanstack/virtual-core@3.13.23': {}
@@ -11918,7 +11931,7 @@ snapshots:
     transitivePeerDependencies:
       - magicast
 
-  nuxt-og-image@6.3.2(1ab178a0a6d50c33a970d1afa646ea35):
+  nuxt-og-image@6.3.2(c335232cb68c560d4841ccbb08355b1b):
     dependencies:
       '@clack/prompts': 1.1.0
       '@nuxt/devtools-kit': 3.2.4(magicast@0.5.2)(vite@7.3.1(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(terser@5.46.1)(yaml@2.8.3))
@@ -11958,6 +11971,7 @@ snapshots:
     optionalDependencies:
       '@resvg/resvg-js': 2.6.2
       '@takumi-rs/core': 1.0.0-rc.12(react@19.2.4)
+      '@takumi-rs/wasm': 1.0.0-rc.12(react@19.2.4)
       fontless: 0.2.1(db0@0.3.4(better-sqlite3@12.8.0))(ioredis@5.10.1)(vite@7.3.1(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(terser@5.46.1)(yaml@2.8.3))
       satori: 0.26.0
       tailwindcss: 4.2.2
