@@ -47,6 +47,8 @@ const byYear = computed(() => {
 function formatDate(dateStr: string) {
   return new Date(dateStr).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
 }
+
+prerenderRoutes(posts.value?.map(post => post.path) || [])
 </script>
 
 <template>
