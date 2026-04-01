@@ -18,7 +18,6 @@ export default defineNuxtConfig({
     url: 'https://itslouis.dev',
   },
 
-
   content: {
     experimental: {
       nativeSqlite: true,
