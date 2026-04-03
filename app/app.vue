@@ -9,7 +9,7 @@ useSeoMeta({
 
 useHead({
   title: 'Louis F.',
-  titleTemplate: '%s | itslouis.dev',
+  titleTemplate: '%s - Louis F.',
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     { name: 'author', content: 'Louis F.' },
