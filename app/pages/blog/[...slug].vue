@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useClipboard } from '@vueuse/core'
+
 const route = useRoute()
 const config = useRuntimeConfig()
 const siteUrl = config.public.siteUrl
@@ -72,6 +74,8 @@ const readingTime = computed(() => {
   return Math.max(1, Math.ceil(words / 200))
 })
 
+const { copy, copied } = useClipboard({ source: canonicalUrl })
+
 function formatDate(dateStr: string) {
   return new Date(dateStr).toLocaleDateString('en-US', {
     month: 'long',
@@ -90,13 +94,24 @@ function formatDate(dateStr: string) {
         aria-hidden="true"
       />
     </Teleport>
-    <NuxtLink
-      to="/blog"
-      class="inline-flex items-center gap-1 text-sm text-neutral-400 hover:text-neutral-200 transition-colors mb-8"
-    >
-      <UIcon name="i-lucide-arrow-left" class="w-3.5 h-3.5" />
-      Blog
-    </NuxtLink>
+    <div class="flex items-center justify-between mb-8">
+      <NuxtLink
+        to="/blog"
+        class="inline-flex items-center gap-1 text-sm text-neutral-400 hover:text-neutral-200 transition-colors"
+      >
+        <UIcon name="i-lucide-arrow-left" class="w-3.5 h-3.5" />
+        Blog
+      </NuxtLink>
+      <UButton
+        variant="ghost"
+        color="neutral"
+        size="xs"
+        :icon="copied ? 'i-lucide-check' : 'i-lucide-link'"
+        :label="copied ? 'Copied!' : 'Copy link'"
+        class="font-mono"
+        @click="copy(canonicalUrl)"
+      />
+    </div>
 
     <div class="mt-2 mb-10">
       <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight">
