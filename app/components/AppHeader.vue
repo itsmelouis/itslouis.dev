@@ -59,6 +59,15 @@ function toTop() {
       >
         <UIcon name="i-simple-icons-github" />
       </NuxtLink>
+      <NuxtLink
+        to="https://x.com/itsmelouisdev"
+        external
+        target="_blank"
+        title="X (twitter)"
+        class="hidden md:flex items-center opacity-60 hover:opacity-100 transition-opacity duration-200 outline-none"
+      >
+        <UIcon name="i-simple-icons-x" />
+      </NuxtLink>
       <ThemeToggle />
     </nav>
   </header>

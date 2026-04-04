@@ -7,6 +7,7 @@ const description = 'Software engineer finishing my master\'s degree. I build fa
 useSeoMeta({
   title: 'Louis F.',
   description,
+  keywords: 'Louis Floquet, Software Engineer, Nuxt, Vue, .NET, itslouis.dev',
   ogTitle: 'Louis F.',
   ogDescription: description,
   ogUrl: siteUrl,
@@ -15,6 +16,7 @@ useSeoMeta({
 })
 
 useHead({
+  titleTemplate: '',
   link: [{ rel: 'canonical', href: siteUrl }],
   script: [
     {
@@ -22,7 +24,8 @@ useHead({
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'Person',
-        'name': 'Louis F.',
+        'name': 'Louis Floquet',
+        'alternateName': 'Louis F.',
         'url': siteUrl,
         'jobTitle': 'Software Engineer',
         'sameAs': [

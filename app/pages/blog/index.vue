@@ -7,11 +7,11 @@ const description = 'Thoughts on the projects I\'m building and the things I\'m 
 useSeoMeta({
   title: 'Blog',
   description,
-  ogTitle: 'Blog | itslouis.dev',
+  ogTitle: 'Blog - Louis F.',
   ogDescription: description,
   ogUrl: `${siteUrl}/blog`,
   ogImage: `${siteUrl}/og/blog.png`,
-  twitterTitle: 'Blog | itslouis.dev',
+  twitterTitle: 'Blog - Louis F.',
   twitterDescription: description,
   twitterImage: `${siteUrl}/og/blog.png`,
 })

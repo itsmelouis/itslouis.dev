@@ -8,12 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@iconify-json/lucide':
-        specifier: ^1.2.96
-        version: 1.2.98
-      '@iconify-json/simple-icons':
-        specifier: ^1.2.72
-        version: 1.2.75
       '@nuxt/a11y':
         specifier: 1.0.0-alpha.1
         version: 1.0.0-alpha.1(magicast@0.5.2)(vite@7.3.1(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(terser@5.46.1)(yaml@2.8.3))
@@ -42,6 +36,12 @@ importers:
       '@iconify-json/carbon':
         specifier: ^1.2.19
         version: 1.2.19
+      '@iconify-json/lucide':
+        specifier: ^1.2.96
+        version: 1.2.98
+      '@iconify-json/simple-icons':
+        specifier: ^1.2.72
+        version: 1.2.75
       '@iconify-json/vscode-icons':
         specifier: ^1.2.45
         version: 1.2.45
