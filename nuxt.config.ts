@@ -66,6 +66,12 @@ export default defineNuxtConfig({
     },
   },
 
+  router: {
+    options: {
+      scrollBehaviorType: 'smooth',
+    },
+  },
+
   vite: {
     optimizeDeps: {
       include: [
