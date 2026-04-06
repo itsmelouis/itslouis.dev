@@ -5,13 +5,13 @@ const siteUrl = config.public.siteUrl
 const description = 'Software engineer finishing my master\'s degree. I build fast, clean interfaces with Nuxt and Vue, and backend systems with .NET.'
 
 useSeoMeta({
-  title: 'Louis F.',
+  title: 'Louis F. — Software Engineer',
   description,
   keywords: 'Louis Floquet, Software Engineer, Nuxt, Vue, .NET, itslouis.dev',
-  ogTitle: 'Louis F.',
+  ogTitle: 'Louis F. — Software Engineer',
   ogDescription: description,
   ogUrl: siteUrl,
-  twitterTitle: 'Louis F.',
+  twitterTitle: 'Louis F. — Software Engineer',
   twitterDescription: description,
 })
 
