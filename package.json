@@ -22,7 +22,7 @@
     "nuxt-og-image": "6.5.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^7.7.3",
+    "@antfu/eslint-config": "^9.0.0",
     "@iconify-json/carbon": "^1.2.21",
     "@iconify-json/lucide": "^1.2.107",
     "@iconify-json/simple-icons": "^1.2.82",
