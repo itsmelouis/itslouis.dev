@@ -29,7 +29,7 @@
     "@iconify-json/vscode-icons": "^1.2.49",
     "@nuxt/eslint": "^1.15.2",
     "eslint": "^10.3.0",
-    "typescript": "^5.9.3",
+    "typescript": "^6.0.3",
     "vue-tsc": "^3.2.8"
   }
 }
