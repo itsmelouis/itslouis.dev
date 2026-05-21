@@ -37,3 +37,8 @@ This is a Nuxt 4 personal portfolio site using the `/app` directory structure:
 - Theme switching uses `useColorMode()` from Nuxt with View Transition API support in `useThemeToggle`
 - Semantic HTML with proper ARIA attributes for accessibility (@nuxt/a11y module enabled)
 - Home page is prerendered via `routeRules` in nuxt.config.ts
+
+## Pull requests
+
+- Always use `.github/pull_request_template.md` as the PR body. Fill in the sections (Linked issue, Type of change, Description) — do not substitute your own structure.
+- PR titles follow Conventional Commits (`feat:`, `fix:`, `chore:`, etc.).
