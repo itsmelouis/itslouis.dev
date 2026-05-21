@@ -1,13 +1,11 @@
 shellEmulator: true
 
-trustPolicy: no-downgrade
-trustPolicyExclude:
-  - chokidar@4.0.3
+ignoredOptionalDependencies:
   - better-sqlite3
 
-ignoredBuiltDependencies:
-  - '@parcel/watcher'
-  - '@tailwindcss/oxide'
-  - esbuild
-  - unrs-resolver
-  - vue-demi
+allowBuilds:
+  '@parcel/watcher': false
+  '@tailwindcss/oxide': false
+  esbuild: false
+  unrs-resolver: false
+  vue-demi: false
