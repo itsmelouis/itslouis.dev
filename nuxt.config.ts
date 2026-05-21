@@ -53,6 +53,11 @@ export default defineNuxtConfig({
           'connect-src': ['\'self\'', 'https://ungh.cc', 'wss://api.lanyard.rest'],
         },
       },
+      // CSP with per-script SHA hashes is delivered via <meta> in the prerendered HTML.
+      // Skip exporting it to Cloudflare _headers — the line exceeds the 2000-char limit.
+      ssg: {
+        exportToPresets: false,
+      },
     },
     ogImage: {
       zeroRuntime: true,
