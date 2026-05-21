@@ -24,6 +24,7 @@ export default withNuxt(
   {
     rules: {
       'e18e/prefer-static-regex': 'off',
+      'pnpm/yaml-enforce-settings': 'off',
     },
   },
 )
