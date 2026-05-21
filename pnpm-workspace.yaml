@@ -1,5 +1,6 @@
-shellEmulator: true
+shamefullyHoist: true
 
+shellEmulator: true
 ignoredOptionalDependencies:
   - better-sqlite3
 
