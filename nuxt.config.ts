@@ -42,6 +42,18 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   $production: {
+    modules: ['nuxt-security'],
+    security: {
+      headers: {
+        crossOriginEmbedderPolicy: false,
+        contentSecurityPolicy: {
+          'script-src-attr': ['\'self\'', '\'unsafe-inline\''],
+          'script-src': ['\'self\'', '\'unsafe-inline\'', 'https://static.cloudflareinsights.com'],
+          'img-src': ['\'self\'', 'data:', 'https://i.scdn.co'],
+          'connect-src': ['\'self\'', 'https://ungh.cc', 'wss://api.lanyard.rest'],
+        },
+      },
+    },
     ogImage: {
       zeroRuntime: true,
     },
