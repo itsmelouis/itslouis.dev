@@ -68,6 +68,17 @@ export default defineNuxtConfig({
       '/blog/**': { prerender: true },
       '/projects': { swr: 3600 },
       '/sitemap.xml': { prerender: true },
+      // nuxt-security's per-route header export is disabled (see security.ssg above)
+      // so the non-CSP security headers are set globally here instead.
+      '/**': {
+        headers: {
+          'Cross-Origin-Resource-Policy': 'same-origin',
+          'Cross-Origin-Opener-Policy': 'same-origin',
+          'Origin-Agent-Cluster': '?1',
+          'X-DNS-Prefetch-Control': 'off',
+          'Permissions-Policy': 'camera=(), display-capture=(), fullscreen=(), geolocation=(), microphone=()',
+        },
+      },
     },
   },
 
