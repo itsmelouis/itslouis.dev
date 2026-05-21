@@ -53,6 +53,11 @@ export default defineNuxtConfig({
           'connect-src': ['\'self\'', 'https://ungh.cc', 'wss://api.lanyard.rest'],
         },
       },
+      // CSP with per-script SHA hashes is delivered via <meta> in the prerendered HTML.
+      // Skip exporting it to Cloudflare _headers — the line exceeds the 2000-char limit.
+      ssg: {
+        exportToPresets: false,
+      },
     },
     ogImage: {
       zeroRuntime: true,
@@ -63,6 +68,17 @@ export default defineNuxtConfig({
       '/blog/**': { prerender: true },
       '/projects': { swr: 3600 },
       '/sitemap.xml': { prerender: true },
+      // nuxt-security's per-route header export is disabled (see security.ssg above)
+      // so the non-CSP security headers are set globally here instead.
+      '/**': {
+        headers: {
+          'Cross-Origin-Resource-Policy': 'same-origin',
+          'Cross-Origin-Opener-Policy': 'same-origin',
+          'Origin-Agent-Cluster': '?1',
+          'X-DNS-Prefetch-Control': 'off',
+          'Permissions-Policy': 'camera=(), display-capture=(), fullscreen=(), geolocation=(), microphone=()',
+        },
+      },
     },
   },
 
