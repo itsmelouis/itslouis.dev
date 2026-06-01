@@ -4,7 +4,7 @@ useSeoMeta({
   ogSiteName: 'itslouis.dev',
   ogType: 'website',
   twitterCard: 'summary_large_image',
-  twitterCreator: '@itsmelouis_',
+  twitterCreator: '@itsmelouisdev',
 })
 
 useHead({
