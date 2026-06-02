@@ -51,6 +51,14 @@ function toTop() {
         <UIcon name="i-lucide-lightbulb" class="md:hidden" />
       </NuxtLink>
       <NuxtLink
+        to="/uses"
+        title="Uses"
+        class="flex items-center opacity-60 hover:opacity-100 transition-opacity duration-200 outline-none"
+      >
+        <span class="hidden md:inline">Uses</span>
+        <UIcon name="i-lucide-wrench" class="md:hidden" />
+      </NuxtLink>
+      <NuxtLink
         to="https://github.com/itsmelouis"
         external
         target="_blank"
