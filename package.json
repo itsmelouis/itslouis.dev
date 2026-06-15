@@ -2,7 +2,7 @@
   "name": "itslouis-dev",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@11.5.2+sha512.71c631e382066efc25625d5cf029075de07b61b37f6e27350fbd84b1bda5864c8c1967adc280776b45c30a715c0359a3be08fef42d5bb09e2b99029979692916",
+  "packageManager": "pnpm@11.6.0+sha512.9a36518224080c6fe5165afdcfe79bfa118c29be703f3f462b1e32efe1e98e47e8750b148e08286250aad4113cc7993ca413c4e2cd447752708c2ee5751bc95f",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -16,21 +16,21 @@
     "@nuxt/a11y": "1.0.0-alpha.1",
     "@nuxt/content": "3.14.0",
     "@nuxt/ui": "^4.8.2",
-    "@takumi-rs/core": "1.7.0",
-    "@takumi-rs/wasm": "1.7.0",
+    "@takumi-rs/core": "1.8.5",
+    "@takumi-rs/wasm": "1.8.5",
     "nuxt": "^4.4.7",
-    "nuxt-og-image": "6.5.2",
+    "nuxt-og-image": "6.6.0",
     "nuxt-security": "2.6.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^9.0.0",
     "@iconify-json/carbon": "^1.2.23",
-    "@iconify-json/lucide": "^1.2.111",
-    "@iconify-json/simple-icons": "^1.2.85",
-    "@iconify-json/vscode-icons": "^1.2.55",
-    "@nuxt/eslint": "^1.15.2",
-    "eslint": "^10.4.1",
+    "@iconify-json/lucide": "^1.2.112",
+    "@iconify-json/simple-icons": "^1.2.86",
+    "@iconify-json/vscode-icons": "^1.2.57",
+    "@nuxt/eslint": "^1.16.0",
+    "eslint": "^10.5.0",
     "typescript": "^6.0.3",
-    "vue-tsc": "^3.3.3"
+    "vue-tsc": "^3.3.5"
   }
 }
