@@ -46,7 +46,17 @@ const categories = useUses()
             {{ category.name }}
           </span>
         </div>
-        <div class="divide-y divide-neutral-200 dark:divide-neutral-800">
+        <div
+          v-if="category.layout === 'grid'"
+          class="grid grid-cols-1 gap-3 sm:grid-cols-2"
+        >
+          <UsesItemCard
+            v-for="item in category.items"
+            :key="item.name"
+            :item="item"
+          />
+        </div>
+        <div v-else class="divide-y divide-neutral-200 dark:divide-neutral-800">
           <UsesItem
             v-for="item in category.items"
             :key="item.name"
