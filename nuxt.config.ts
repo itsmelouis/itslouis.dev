@@ -66,6 +66,7 @@ export default defineNuxtConfig({
       '/': { prerender: true },
       '/blog': { prerender: true },
       '/blog/**': { prerender: true },
+      '/uses': { prerender: true },
       '/projects': { swr: 3600 },
       '/sitemap.xml': { prerender: true },
       // nuxt-security's per-route header export is disabled (see security.ssg above)
