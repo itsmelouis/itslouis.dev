@@ -1,0 +1,22 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "c",
+  "main": "party/server.ts",
+  "compatibility_date": "2025-01-15",
+  "durable_objects": {
+    "bindings": [
+      { "name": "Presence", "class_name": "PresenceServer" }
+    ]
+  },
+  // `new_sqlite_classes` (not `new_classes`) is required for Durable Objects on
+  // the Workers free plan — SQLite-backed storage is the only DO backend the
+  // free plan supports.
+  "migrations": [
+    { "tag": "v1", "new_sqlite_classes": ["PresenceServer"] }
+  ],
+  // Serve the Worker from our own Cloudflare zone (replaces partykit.json `domain`).
+  "routes": [
+    { "pattern": "c.itslouis.dev", "custom_domain": true }
+  ],
+  "observability": { "enabled": true }
+}

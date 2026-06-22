@@ -9,7 +9,8 @@ if (import.meta.client) {
 
   onNuxtReady(() => {
     socket = new PartySocket({
-      host: import.meta.dev ? 'localhost:1999' : config.public.partykitHost,
+      host: import.meta.dev ? 'localhost:8787' : config.public.partyHost,
+      party: 'presence',
       room: 'site',
     })
 
