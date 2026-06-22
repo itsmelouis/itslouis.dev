@@ -10,7 +10,9 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "typecheck": "nuxt typecheck"
+    "typecheck": "nuxt typecheck",
+    "partykit:dev": "partykit dev ./partykit/server.ts",
+    "partykit:deploy": "partykit deploy ./partykit/server.ts"
   },
   "dependencies": {
     "@nuxt/a11y": "1.0.0-alpha.1",
@@ -20,7 +22,8 @@
     "@takumi-rs/wasm": "1.8.7",
     "nuxt": "^4.4.8",
     "nuxt-og-image": "6.6.0",
-    "nuxt-security": "2.6.0"
+    "nuxt-security": "2.6.0",
+    "partysocket": "^1.2.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^9.0.0",
@@ -30,6 +33,7 @@
     "@iconify-json/vscode-icons": "^1.2.58",
     "@nuxt/eslint": "^1.16.0",
     "eslint": "^10.5.0",
+    "partykit": "^0.0.115",
     "typescript": "^6.0.3",
     "vue-tsc": "^3.3.5"
   }

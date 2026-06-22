@@ -13,6 +13,9 @@ node_modules
 logs
 *.log
 
+# PartyKit local build/state cache
+.partykit
+
 # Misc
 .DS_Store
 .fleet
