@@ -1,8 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import process from 'node:process'
+
+// partyserver Worker endpoint that powers the live viewer count. Deployed to
+// our own Cloudflare account (see party/wrangler.jsonc `routes`), so this matches the
+// custom domain we deploy to. Overridable via NUXT_PUBLIC_PARTY_HOST.
+const partyHost = process.env.NUXT_PUBLIC_PARTY_HOST || 'c.itslouis.dev'
+
 export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       siteUrl: 'https://itslouis.dev',
+      partyHost,
     },
   },
 
@@ -50,7 +58,7 @@ export default defineNuxtConfig({
           'script-src-attr': ['\'self\'', '\'unsafe-inline\''],
           'script-src': ['\'self\'', '\'unsafe-inline\'', 'https://static.cloudflareinsights.com'],
           'img-src': ['\'self\'', 'data:', 'https://i.scdn.co'],
-          'connect-src': ['\'self\'', 'https://ungh.cc', 'wss://api.lanyard.rest'],
+          'connect-src': ['\'self\'', 'https://ungh.cc', 'wss://api.lanyard.rest', `wss://${partyHost}`, `https://${partyHost}`],
         },
       },
       // CSP with per-script SHA hashes is delivered via <meta> in the prerendered HTML.

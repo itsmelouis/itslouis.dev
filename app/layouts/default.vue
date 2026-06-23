@@ -5,5 +5,6 @@
       <slot />
     </main>
     <SpotifyCard />
+    <PresenceIndicator />
   </div>
 </template>

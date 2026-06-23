@@ -10,7 +10,9 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "typecheck": "nuxt typecheck"
+    "typecheck": "nuxt typecheck",
+    "party:dev": "wrangler dev --config party/wrangler.jsonc",
+    "party:deploy": "wrangler deploy --config party/wrangler.jsonc"
   },
   "dependencies": {
     "@nuxt/a11y": "1.0.0-alpha.1",
@@ -20,10 +22,13 @@
     "@takumi-rs/wasm": "1.8.7",
     "nuxt": "^4.4.8",
     "nuxt-og-image": "6.6.0",
-    "nuxt-security": "2.6.0"
+    "nuxt-security": "2.6.0",
+    "partyserver": "^0.5.8",
+    "partysocket": "^1.2.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^9.0.0",
+    "@cloudflare/workers-types": "^4.20260621.1",
     "@iconify-json/carbon": "^1.2.23",
     "@iconify-json/lucide": "^1.2.114",
     "@iconify-json/simple-icons": "^1.2.86",
@@ -31,6 +36,7 @@
     "@nuxt/eslint": "^1.16.0",
     "eslint": "^10.5.0",
     "typescript": "^6.0.3",
-    "vue-tsc": "^3.3.5"
+    "vue-tsc": "^3.3.5",
+    "wrangler": "^4.103.0"
   }
 }
