@@ -2,7 +2,7 @@
 import process from 'node:process'
 
 // partyserver Worker endpoint that powers the live viewer count. Deployed to
-// our own Cloudflare account (see wrangler.jsonc `routes`), so this matches the
+// our own Cloudflare account (see party/wrangler.jsonc `routes`), so this matches the
 // custom domain we deploy to. Overridable via NUXT_PUBLIC_PARTY_HOST.
 const partyHost = process.env.NUXT_PUBLIC_PARTY_HOST || 'c.itslouis.dev'
 

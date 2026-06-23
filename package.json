@@ -11,8 +11,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "typecheck": "nuxt typecheck",
-    "party:dev": "wrangler dev",
-    "party:deploy": "wrangler deploy"
+    "party:dev": "wrangler dev --config party/wrangler.jsonc",
+    "party:deploy": "wrangler deploy --config party/wrangler.jsonc"
   },
   "dependencies": {
     "@nuxt/a11y": "1.0.0-alpha.1",

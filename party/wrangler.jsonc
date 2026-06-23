@@ -1,7 +1,7 @@
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
+  "$schema": "../node_modules/wrangler/config-schema.json",
   "name": "c",
-  "main": "party/server.ts",
+  "main": "server.ts",
   "compatibility_date": "2025-01-15",
   "durable_objects": {
     "bindings": [
