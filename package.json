@@ -2,7 +2,7 @@
   "name": "itslouis-dev",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@11.8.0+sha512.c1f5e7c4cb241c8f174b743851d82f42b802324afc8b0f116b96adb15aa06664948dde36960a3ba1079ba5b4b29dd0140135b94b5b5f5263592249d68e555f26",
+  "packageManager": "pnpm@11.9.0+sha512.bd682d5d03fe525ef7c9fd6780c6884d1e756ac4c9c9fe00c538782824310dcf90e3ddc4f53835f06dfaebd5085e41855e0bcbb3b60de2ac5bbab89e5036f03b",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -21,22 +21,22 @@
     "@takumi-rs/core": "1.8.7",
     "@takumi-rs/wasm": "1.8.7",
     "nuxt": "^4.4.8",
-    "nuxt-og-image": "6.6.0",
+    "nuxt-og-image": "6.7.0",
     "nuxt-security": "2.6.0",
     "partyserver": "^0.5.8",
-    "partysocket": "^1.2.0"
+    "partysocket": "^1.3.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^9.0.0",
-    "@cloudflare/workers-types": "^4.20260621.1",
+    "@antfu/eslint-config": "^9.1.0",
+    "@cloudflare/workers-types": "^4.20260628.1",
     "@iconify-json/carbon": "^1.2.23",
     "@iconify-json/lucide": "^1.2.114",
-    "@iconify-json/simple-icons": "^1.2.86",
-    "@iconify-json/vscode-icons": "^1.2.58",
+    "@iconify-json/simple-icons": "^1.2.87",
+    "@iconify-json/vscode-icons": "^1.2.62",
     "@nuxt/eslint": "^1.16.0",
-    "eslint": "^10.5.0",
+    "eslint": "^10.6.0",
     "typescript": "^6.0.3",
     "vue-tsc": "^3.3.5",
-    "wrangler": "^4.103.0"
+    "wrangler": "^4.105.0"
   }
 }
