@@ -54,6 +54,10 @@ pnpm party:deploy     # Deploy the PartyServer worker
 - Keep production-only configuration inside the existing `$production` block when appropriate.
 - Use any relevant available skills or specialized instructions for Nuxt, Vue, Nuxt UI, content, motion, or frontend design work before implementing changes.
 
+## Zed
+
+Project tasks live in `.zed/tasks.json` and are available from Zed's task picker. Keep them aligned with the scripts in `package.json`.
+
 ## Validation
 
 Run the checks relevant to the change. For application code, the default validation is:
