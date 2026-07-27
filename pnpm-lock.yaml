@@ -34,7 +34,7 @@ importers:
         version: 2.6.0(magic-string@1.1.0)(magicast@0.5.3)(oxc-parser@0.140.0)(rollup@4.60.3)(supports-color@10.2.2)(unplugin@3.3.0(esbuild@0.28.1)(rollup@4.60.3)(vite@7.3.3(@types/node@25.5.0)(jiti@2.7.0)(lightningcss@1.32.0)(terser@5.46.1)(yaml@2.9.0)))
       partyserver:
         specifier: ^0.5.8
-        version: 0.5.8(@cloudflare/workers-types@4.20260702.1)
+        version: 0.5.8(@cloudflare/workers-types@5.20260726.1)
       partysocket:
         specifier: ^1.3.0
         version: 1.3.0
@@ -43,8 +43,8 @@ importers:
         specifier: ^9.2.0
         version: 9.2.0(@typescript-eslint/typescript-estree@8.65.0(supports-color@10.2.2)(typescript@6.0.3))(@typescript-eslint/utils@8.65.0(eslint@10.8.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(@vue/compiler-sfc@3.5.40)(eslint@10.8.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)
       '@cloudflare/workers-types':
-        specifier: ^4.20260702.1
-        version: 4.20260702.1
+        specifier: ^5.20260726.1
+        version: 5.20260726.1
       '@iconify-json/carbon':
         specifier: ^1.2.24
         version: 1.2.24
@@ -71,7 +71,7 @@ importers:
         version: 3.3.8(typescript@6.0.3)
       wrangler:
         specifier: ^4.114.0
-        version: 4.114.0(@cloudflare/workers-types@4.20260702.1)
+        version: 4.114.0(@cloudflare/workers-types@5.20260726.1)
 
 packages:
 
@@ -361,8 +361,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@cloudflare/workers-types@4.20260702.1':
-    resolution: {integrity: sha512-mOhf5TUEB1m2vPrxtqoIGfz0fUC9xyxRDx5gWHy5s+OCo6dcV+g7wI1R7gYCMFohhqF/2y2xeKVwMwCJjfn/WA==}
+  '@cloudflare/workers-types@5.20260726.1':
+    resolution: {integrity: sha512-fKgRSm3sDmOdak1LGWehS4vSPSj7/zeu0NfmE62VPjBMqWgODcOGljYvq6A75sL+7YfY3iGFGb0jVEDYq+hlmw==}
 
   '@colordx/core@5.4.3':
     resolution: {integrity: sha512-kIxYSfA5T8HXjav55UaaH/o/cKivF6jCCGIb8eqtcsfI46wsvlSiT8jMDyrl779qLec3c2c2oHBZo4oAhvbjrQ==}
@@ -7720,7 +7720,7 @@ snapshots:
   '@cloudflare/workerd-windows-64@1.20260722.1':
     optional: true
 
-  '@cloudflare/workers-types@4.20260702.1': {}
+  '@cloudflare/workers-types@5.20260726.1': {}
 
   '@colordx/core@5.4.3': {}
 
@@ -14233,9 +14233,9 @@ snapshots:
 
   parseurl@1.3.3: {}
 
-  partyserver@0.5.8(@cloudflare/workers-types@4.20260702.1):
+  partyserver@0.5.8(@cloudflare/workers-types@5.20260726.1):
     dependencies:
-      '@cloudflare/workers-types': 4.20260702.1
+      '@cloudflare/workers-types': 5.20260726.1
       nanoid: 5.1.15
 
   partysocket@1.3.0:
@@ -15882,7 +15882,7 @@ snapshots:
       '@cloudflare/workerd-linux-arm64': 1.20260722.1
       '@cloudflare/workerd-windows-64': 1.20260722.1
 
-  wrangler@4.114.0(@cloudflare/workers-types@4.20260702.1):
+  wrangler@4.114.0(@cloudflare/workers-types@5.20260726.1):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.5.0
       '@cloudflare/unenv-preset': 2.16.1(unenv@2.0.0-rc.24)(workerd@1.20260722.1)
@@ -15893,7 +15893,7 @@ snapshots:
       unenv: 2.0.0-rc.24
       workerd: 1.20260722.1
     optionalDependencies:
-      '@cloudflare/workers-types': 4.20260702.1
+      '@cloudflare/workers-types': 5.20260726.1
       fsevents: 2.3.3
     transitivePeerDependencies:
       - bufferutil
