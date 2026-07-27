@@ -20,7 +20,7 @@
     "@nuxt/ui": "^4.10.0",
     "@takumi-rs/core": "1.8.7",
     "@takumi-rs/wasm": "1.8.7",
-    "nuxt": "^4.4.8",
+    "nuxt": "^4.5.1",
     "nuxt-og-image": "6.7.4",
     "nuxt-security": "2.6.0",
     "partyserver": "^0.5.8",
