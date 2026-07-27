@@ -7,7 +7,6 @@ const description = 'Software engineer finishing my master\'s degree. I build fa
 useSeoMeta({
   title: 'Louis F. — Software Engineer',
   description,
-  keywords: 'Louis Floquet, Software Engineer, Nuxt, Vue, .NET, itslouis.dev',
   ogTitle: 'Louis F. — Software Engineer',
   ogDescription: description,
   ogUrl: siteUrl,
@@ -18,6 +17,7 @@ useSeoMeta({
 useHead({
   titleTemplate: '',
   link: [{ rel: 'canonical', href: siteUrl }],
+  meta: [{ name: 'keywords', content: 'Louis Floquet, Software Engineer, Nuxt, Vue, .NET, itslouis.dev' }],
   script: [
     {
       type: 'application/ld+json',
