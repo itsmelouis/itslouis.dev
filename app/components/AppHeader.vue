@@ -19,21 +19,49 @@ function toTop() {
 </script>
 
 <template>
-  <header class="z-40 xl:fixed w-full flex items-center justify-between px-5 py-4">
+  <header
+    class="z-40 xl:fixed w-full flex items-center justify-between px-5 py-4"
+  >
     <div class="flex items-center gap-3 min-w-0">
       <NuxtLink
         to="/"
         aria-label="Home"
         class="w-12 h-12 shrink-0 select-none outline-none hover:-rotate-12 transition-transform"
       >
-        <img src="/logo-light.svg" alt="Louis logo" class="w-full h-full object-contain rounded-lg border border-neutral-300 dark:border-transparent">
+        <img
+          src="/logo-light.svg"
+          alt="Louis logo"
+          class="w-full h-full object-contain rounded-lg border border-neutral-300 dark:border-transparent"
+        >
       </NuxtLink>
-      <span v-if="breadcrumb" class="text-sm font-mono text-neutral-400 dark:text-neutral-500 select-none truncate max-w-[38vw] sm:max-w-none">
+      <span
+        v-if="breadcrumb"
+        class="text-sm font-mono text-neutral-400 dark:text-neutral-500 select-none truncate max-w-[38vw] sm:max-w-none"
+      >
         {{ breadcrumb }}
       </span>
     </div>
 
-    <nav aria-label="Main navigation" class="flex items-center gap-5 shrink-0 print:opacity-0">
+    <nav
+      aria-label="Main navigation"
+      class="flex items-center gap-5 shrink-0 print:opacity-0"
+    >
+      <UTooltip
+        text="Only available in French"
+        :delay-duration="0"
+        :content="{ side: 'bottom' }"
+      >
+        <NuxtLink
+          to="https://cv.itslouis.dev"
+          title="CV"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center opacity-60 hover:opacity-100 transition-opacity duration-200 outline-none"
+        >
+          <span class="hidden md:inline">CV</span>
+          <UIcon name="i-lucide-file-user" class="md:hidden" />
+        </NuxtLink>
+      </UTooltip>
       <NuxtLink
         to="/blog"
         title="Blog"
@@ -86,7 +114,11 @@ function toTop() {
     variant="ghost"
     title="Scroll to top"
     class="fixed right-3 bottom-3 z-100 print:hidden transition-opacity duration-300"
-    :class="scroll > 300 ? 'opacity-30 hover:opacity-100' : 'opacity-0 pointer-events-none'"
+    :class="
+      scroll > 300
+        ? 'opacity-30 hover:opacity-100'
+        : 'opacity-0 pointer-events-none'
+    "
     @click="toTop()"
   />
 </template>
