@@ -6,5 +6,6 @@
     </main>
     <SpotifyCard />
     <PresenceIndicator />
+    <KeyboardSurprise />
   </div>
 </template>
