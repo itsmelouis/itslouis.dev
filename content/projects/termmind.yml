@@ -1,0 +1,12 @@
+title: Termmind
+description: A polished and accessible Mastermind game for the terminal, distributed as a native cross-platform executable.
+url: https://github.com/itsmelouis/termmind
+image: /images/projects/termmind.png
+imageAlt: Termmind Mastermind game running in a terminal
+year: 2026
+order: 3
+tags:
+  - Rust
+  - Ratatui
+  - Crossterm
+icon: i-lucide-terminal

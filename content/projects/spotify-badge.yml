@@ -1,0 +1,12 @@
+title: Spotify Badge
+description: A Cloudflare Worker that turns my currently playing Spotify track into a dynamic SVG badge that can be embedded anywhere.
+url: https://github.com/itsmelouis/spotify-badge
+image: /images/projects/spotify-badge.png
+imageAlt: Dynamic Spotify badge showing the currently playing track
+year: 2026
+order: 2
+tags:
+  - TypeScript
+  - Cloudflare Workers
+  - Spotify API
+icon: i-simple-icons-spotify

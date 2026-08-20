@@ -1,0 +1,11 @@
+title: Sportly
+description: A multi-tenant platform that helps people discover local sports clubs and events while giving organizations tools to manage their community.
+url: https://github.com/SportlyMDS/sportly
+year: 2025
+order: 5
+tags:
+  - Nuxt
+  - PostgreSQL
+  - Better Auth
+  - Drizzle
+icon: i-lucide-dumbbell

@@ -58,7 +58,7 @@ export default defineNuxtConfig({
           'script-src-attr': ['\'self\'', '\'unsafe-inline\''],
           'script-src': ['\'self\'', '\'unsafe-inline\'', 'https://static.cloudflareinsights.com'],
           'img-src': ['\'self\'', 'data:', 'https://i.scdn.co'],
-          'connect-src': ['\'self\'', 'https://ungh.cc', 'wss://api.lanyard.rest', `wss://${partyHost}`, `https://${partyHost}`],
+          'connect-src': ['\'self\'', 'wss://api.lanyard.rest', `wss://${partyHost}`, `https://${partyHost}`],
         },
       },
       // CSP with per-script SHA hashes is delivered via <meta> in the prerendered HTML.
@@ -70,16 +70,19 @@ export default defineNuxtConfig({
     ogImage: {
       zeroRuntime: true,
     },
+    nitro: {
+      prerender: {
+        crawlLinks: true,
+        routes: ['/', '/sitemap.xml'],
+      },
+    },
     routeRules: {
-      '/': { prerender: true },
-      '/blog': { prerender: true },
-      '/blog/**': { prerender: true },
-      '/uses': { prerender: true },
-      '/projects': { swr: 3600 },
-      '/sitemap.xml': { prerender: true },
-      // nuxt-security's per-route header export is disabled (see security.ssg above)
-      // so the non-CSP security headers are set globally here instead.
+      // Every public route is content-driven and can be generated at build time.
+      // Dynamic blog routes are registered with prerenderRoutes() from /blog.
       '/**': {
+        prerender: true,
+        // nuxt-security's per-route header export is disabled (see security.ssg above)
+        // so the non-CSP security headers are set globally here instead.
         headers: {
           'Cross-Origin-Resource-Policy': 'same-origin',
           'Cross-Origin-Opener-Policy': 'same-origin',
