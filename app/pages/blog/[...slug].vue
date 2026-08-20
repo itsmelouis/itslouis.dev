@@ -1,12 +1,15 @@
 <script setup lang="ts">
 import { useClipboard } from '@vueuse/core'
+import { withoutTrailingSlash } from 'ufo'
 
 const route = useRoute()
 const config = useRuntimeConfig()
 const siteUrl = config.public.siteUrl
 
-const { data: post } = await useAsyncData(route.path, () =>
-  queryCollection('blog').path(route.path).first())
+const routePath = computed(() => withoutTrailingSlash(route.path))
+
+const { data: post } = await useAsyncData(routePath.value, () =>
+  queryCollection('blog').path(routePath.value).first())
 
 if (!post.value) {
   throw createError({ statusCode: 404, statusMessage: 'Post not found' })
