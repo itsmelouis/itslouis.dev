@@ -14,5 +14,20 @@ export default defineContentConfig({
         draft: z.boolean().default(false),
       }),
     }),
+    projects: defineCollection({
+      type: 'data',
+      source: 'projects/*.yml',
+      schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        url: z.string().url(),
+        year: z.number().int(),
+        order: z.number().int(),
+        tags: z.array(z.string()),
+        icon: z.string(),
+        image: z.string().optional(),
+        imageAlt: z.string().optional(),
+      }),
+    }),
   },
 })

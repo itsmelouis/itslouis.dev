@@ -1,0 +1,12 @@
+title: itslouis.dev
+description: The site you're on - a fast, accessible portfolio and content-driven blog with a PartyServer-powered live presence layer.
+url: https://github.com/itsmelouis/itslouis.dev
+image: /images/projects/itslouis-dev.png
+imageAlt: Homepage of the itslouis.dev portfolio
+year: 2026
+order: 1
+tags:
+  - Nuxt
+  - Nuxt Content
+  - PartyServer
+icon: i-lucide-globe-2

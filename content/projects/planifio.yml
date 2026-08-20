@@ -1,0 +1,12 @@
+title: Planifio
+description: An installable personal finance PWA for tracking payments, monitoring spending, and exploring financial statistics offline.
+url: https://github.com/itsmelouis/planifio
+image: /images/projects/planifio.png
+imageAlt: Planifio personal finance dashboard
+year: 2025
+order: 4
+tags:
+  - Nuxt
+  - PWA
+  - Vue
+icon: i-lucide-chart-no-axes-combined
