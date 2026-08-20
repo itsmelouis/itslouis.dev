@@ -130,7 +130,7 @@ Ask Claude to read the relevant parts of the codebase deeply before doing anythi
 
 ### Plan
 
-Claude writes a `plan.md` with a detailed implementation approach, code snippets, and the files it intends to touch. I use my own markdown file rather than Claude Code's built-in plan mode — it persists, I can edit it directly, and I stay in control of the architecture decisions.
+Claude writes a `plan.md` with a detailed implementation approach, code snippets, and the files it intends to touch. I use my own markdown file rather than Claude Code's built-in plan mode - it persists, I can edit it directly, and I stay in control of the architecture decisions.
 
 ### Annotate
 
