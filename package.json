@@ -2,7 +2,7 @@
   "name": "itslouis-dev",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@11.26.0",
+  "packageManager": "pnpm@12.3.4",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
