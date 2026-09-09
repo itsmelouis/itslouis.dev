@@ -3,6 +3,13 @@
   "type": "module",
   "private": true,
   "packageManager": "pnpm@12.3.4",
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "^24.20.0",
+      "onFail": "warn"
+    }
+  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
