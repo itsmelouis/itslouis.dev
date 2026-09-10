@@ -39,3 +39,21 @@ jobs:
 
       - name: Typecheck
         run: pnpm run typecheck
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Install pnpm, Node and dependencies
+        uses: pnpm/setup@703c52620218391530e48b9e8870d5c0082e1b9b # v2.1.0
+        with:
+          cache: true
+          require-lockfile: true
+
+      - name: Build with the Cloudflare preset
+        run: pnpm run build
+        env:
+          NITRO_PRESET: cloudflare_module
