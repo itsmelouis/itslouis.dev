@@ -3,7 +3,8 @@
     "github>nuxt/renovate-config-nuxt"
   ],
   "lockFileMaintenance": {
-    "enabled": true
+    "enabled": true,
+    "minimumReleaseAgeBehaviour": "timestamp-optional"
   },
   "ignoreDeps": ["chokidar"],
   "packageRules": [{
