@@ -79,20 +79,20 @@ prerenderRoutes(posts.value?.map(post => post.path) || [])
         >
           <div class="flex-1 min-w-0">
             <span class="font-mono text-sm">{{ post.title }}</span>
-            <p v-if="post.description" class="text-xs text-neutral-500 mt-0.5 truncate">
+            <p v-if="post.description" class="text-xs text-neutral-600 dark:text-neutral-400 mt-0.5 truncate">
               {{ post.description }}
             </p>
             <div v-if="post.tags?.length" class="flex flex-wrap gap-1 mt-1">
               <span
                 v-for="tag in post.tags"
                 :key="tag"
-                class="px-1.5 py-0.5 text-xs font-mono rounded bg-neutral-100 dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400"
+                class="px-1.5 py-0.5 text-xs font-mono rounded bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400"
               >
                 {{ tag }}
               </span>
             </div>
           </div>
-          <span class="text-xs text-neutral-500 dark:text-neutral-400 font-mono shrink-0 mt-0.5">
+          <span class="text-xs text-neutral-600 dark:text-neutral-400 font-mono shrink-0 mt-0.5">
             {{ formatDate(post.date) }}
           </span>
         </NuxtLink>

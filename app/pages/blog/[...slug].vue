@@ -64,6 +64,9 @@ useHead({
   ],
 })
 
+const reactionSlug = computed(() => routePath.value.replace(/^\/blog\//, ''))
+const reactions = useReactions(reactionSlug)
+
 const toc = computed(() => post.value?.body?.toc?.links ?? [])
 
 const articleRef = useTemplateRef<HTMLElement>('article')
@@ -105,15 +108,22 @@ function formatDate(dateStr: string) {
         <UIcon name="i-lucide-arrow-left" class="w-3.5 h-3.5" />
         Blog
       </NuxtLink>
-      <UButton
-        variant="ghost"
-        color="neutral"
-        size="xs"
-        :icon="copied ? 'i-lucide-check' : 'i-lucide-link'"
-        :label="copied ? 'Copied!' : 'Copy link'"
-        class="font-mono"
-        @click="copy(canonicalUrl)"
-      />
+      <div class="flex items-center gap-2">
+        <ReactionButton
+          :count="reactions.count.value"
+          :reacted="reactions.reacted.value"
+          @toggle="reactions.toggle"
+        />
+        <UButton
+          variant="ghost"
+          color="neutral"
+          size="xs"
+          :icon="copied ? 'i-lucide-check' : 'i-lucide-link'"
+          :label="copied ? 'Copied!' : 'Copy link'"
+          class="font-mono"
+          @click="copy(canonicalUrl)"
+        />
+      </div>
     </div>
 
     <div class="mt-2 mb-10">
@@ -126,7 +136,7 @@ function formatDate(dateStr: string) {
         <span
           v-for="tag in post!.tags"
           :key="tag"
-          class="px-1.5 py-0.5 text-xs font-mono rounded bg-neutral-100 dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400"
+          class="px-1.5 py-0.5 text-xs font-mono rounded bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400"
         >
           {{ tag }}
         </span>
@@ -147,16 +157,24 @@ function formatDate(dateStr: string) {
           :ui="{
             root: 'sticky top-28 overflow-y-auto bg-transparent! backdrop-blur-none!',
             container: 'flex flex-col gap-2 lg:py-0 lg:border-0',
-            title: 'text-xs font-mono uppercase tracking-widest text-neutral-500',
+            title: 'text-xs font-mono uppercase tracking-widest text-neutral-600 dark:text-neutral-400',
             content: 'ms-0',
             list: 'ms-2.5 ps-4 border-l border-neutral-200 dark:border-neutral-800',
-            link: 'text-xs font-mono text-neutral-500 hover:text-neutral-200 dark:hover:text-neutral-200 transition-colors',
+            link: 'text-xs font-mono text-neutral-600 dark:text-neutral-400 hover:text-neutral-200 dark:hover:text-neutral-200 transition-colors',
             linkText: 'whitespace-normal leading-snug',
             indicator: 'absolute ms-2.5 transition-[translate,height] duration-200 h-(--indicator-size) translate-y-(--indicator-position) w-px',
             indicatorActive: 'bg-neutral-400 w-full h-full',
           }"
         />
       </aside>
+    </div>
+    <div class="mt-12 flex items-center gap-3 border-t border-neutral-200 dark:border-neutral-800 pt-6">
+      <span class="text-sm text-neutral-600 dark:text-neutral-400">Enjoyed this post?</span>
+      <ReactionButton
+        :count="reactions.count.value"
+        :reacted="reactions.reacted.value"
+        @toggle="reactions.toggle"
+      />
     </div>
   </div>
 </template>
