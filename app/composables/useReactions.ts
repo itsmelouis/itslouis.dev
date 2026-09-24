@@ -4,7 +4,11 @@ function readVisitor(create: boolean) {
   try {
     let id = localStorage.getItem(VISITOR_KEY)
     if (!id && create) {
-      id = crypto.randomUUID()
+      // randomUUID() only exists in secure contexts (e.g. not on a LAN IP over http).
+      id = typeof crypto.randomUUID === 'function'
+        ? crypto.randomUUID()
+        : '10000000-1000-4000-8000-100000000000'.replace(/[018]/g, c =>
+            (+c ^ (crypto.getRandomValues(new Uint8Array(1))[0]! & (15 >> (+c / 4)))).toString(16))
       localStorage.setItem(VISITOR_KEY, id)
     }
     return id ?? undefined
@@ -41,17 +45,19 @@ export function useReactions(slug: MaybeRefOrGetter<string>) {
     }
   })
 
+  let release: (() => void) | undefined
+
   watch(() => toValue(slug), (value) => {
     count.value = null
     reacted.value = false
     rollback = null
-    $live.setView(value, readVisitor(false))
+    release?.()
+    release = $live.watchView(value, readVisitor(false))
   }, { immediate: true })
 
   onScopeDispose(() => {
     stop()
-    if ($live.currentView() === toValue(slug))
-      $live.setView(null)
+    release?.()
   })
 
   function toggle() {
