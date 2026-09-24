@@ -1,31 +1,5 @@
 <script setup lang="ts">
-import PartySocket from 'partysocket'
-
-const config = useRuntimeConfig()
-const count = ref<number | null>(null)
-
-if (import.meta.client) {
-  let socket: PartySocket | undefined
-
-  onNuxtReady(() => {
-    socket = new PartySocket({
-      host: import.meta.dev ? 'localhost:8787' : config.public.partyHost,
-      party: 'presence',
-      room: 'site',
-    })
-
-    socket.onmessage = (event) => {
-      const [type, value] = String(event.data).split(':')
-      if (type === 'connections' && value)
-        count.value = Number.parseInt(value, 10)
-    }
-  })
-
-  // Tidy up the socket across SPA navigation and keep-alive lifecycle.
-  onBeforeUnmount(() => socket?.close())
-  onDeactivated(() => socket?.close())
-  onActivated(() => socket?.reconnect())
-}
+const count = import.meta.client ? useNuxtApp().$live.presence : ref<number | null>(null)
 </script>
 
 <template>
