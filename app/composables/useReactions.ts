@@ -21,7 +21,11 @@ function readVisitor(create: boolean) {
 export function useReactions(slug: MaybeRefOrGetter<string>) {
   const count = ref<number | null>(null)
   const reacted = ref(false)
-  const result = { count: readonly(count), reacted: readonly(reacted), toggle }
+  const result = {
+    count: readonly(count),
+    reacted: readonly(reacted),
+    toggle,
+  }
   let rollback: { count: number, reacted: boolean } | null = null
 
   if (import.meta.server)
@@ -65,11 +69,19 @@ export function useReactions(slug: MaybeRefOrGetter<string>) {
     if (!visitor || count.value === null)
       return
     const next = !reacted.value
-    if (!$live.send({ type: 'react', slug: toValue(slug), visitor, reacted: next }))
+    if (!$live.send({
+      type: 'react',
+      slug: toValue(slug),
+      visitor,
+      reacted: next,
+    })) {
       return
+    }
     rollback ??= { count: count.value, reacted: reacted.value }
     reacted.value = next
-    count.value = Math.max(0, count.value + (next ? 1 : -1))
+    count.value = Math.max(0, count.value + (next
+      ? 1
+      : -1))
   }
 
   return result

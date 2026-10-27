@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const count = import.meta.client ? useNuxtApp().$live.presence : ref<number | null>(null)
+const count = import.meta.client
+  ? useNuxtApp().$live.presence
+  : ref<number | null>(null)
 </script>
 
 <template>

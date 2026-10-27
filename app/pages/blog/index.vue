@@ -17,7 +17,9 @@ useSeoMeta({
 })
 
 useHead({
-  link: [{ rel: 'canonical', href: `${siteUrl}/blog` }],
+  link: [
+    { rel: 'canonical', href: `${siteUrl}/blog` },
+  ],
 })
 
 const { data: posts } = await useAsyncData('blog', () =>
@@ -38,7 +40,10 @@ const byYear = computed(() => {
       group.posts.push(post)
     }
     else {
-      groups.push({ year, posts: [post] })
+      groups.push({
+        year,
+        posts: [post],
+      })
     }
   }
   return groups
