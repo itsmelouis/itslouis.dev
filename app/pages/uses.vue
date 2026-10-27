@@ -15,7 +15,9 @@ useSeoMeta({
 })
 
 useHead({
-  link: [{ rel: 'canonical', href: `${siteUrl}/uses` }],
+  link: [
+    { rel: 'canonical', href: `${siteUrl}/uses` },
+  ],
 })
 
 const categories = useUses()

@@ -62,7 +62,9 @@ export class PresenceServer extends Server<Env> {
           type: 'reactions',
           slug: message.slug,
           count: this.#countReactions(message.slug),
-          reacted: message.visitor ? this.#hasReacted(message.slug, message.visitor) : false,
+          reacted: message.visitor
+            ? this.#hasReacted(message.slug, message.visitor)
+            : false,
         })
       }
       return
@@ -89,22 +91,33 @@ export class PresenceServer extends Server<Env> {
 
     const count = this.#countReactions(message.slug)
     for (const conn of this.getConnections<ConnectionState>()) {
-      if (conn.id === connection.id)
-        send(conn, { type: 'reactions', slug: message.slug, count, reacted: message.reacted })
-      else if (conn.state?.slug === message.slug)
+      if (conn.id === connection.id) {
+        send(conn, {
+          type: 'reactions',
+          slug: message.slug,
+          count,
+          reacted: message.reacted,
+        })
+      }
+      else if (conn.state?.slug === message.slug) {
         send(conn, { type: 'reactions', slug: message.slug, count })
+      }
     }
   }
 
   #broadcastCount(excludeId?: string) {
-    const connections = [...this.getConnections()]
+    const connections = [
+      ...this.getConnections(),
+    ]
     // On disconnect the closing connection may still be listed, so exclude it
     // to keep the broadcast count accurate.
     const count = excludeId
       ? connections.filter(c => c.id !== excludeId).length
       : connections.length
     const message: LiveServerMessage = { type: 'presence', count }
-    this.broadcast(JSON.stringify(message), excludeId ? [excludeId] : [])
+    this.broadcast(JSON.stringify(message), excludeId
+      ? [excludeId]
+      : [])
   }
 
   #countReactions(slug: string) {
@@ -140,7 +153,9 @@ export class PresenceServer extends Server<Env> {
       ['sign'],
     ) as Promise<CryptoKey>
     const signature = await crypto.subtle.sign('HMAC', await this.#hmacKey, new TextEncoder().encode(ip))
-    return [...new Uint8Array(signature)].map(b => b.toString(16).padStart(2, '0')).join('')
+    return [
+      ...new Uint8Array(signature),
+    ].map(b => b.toString(16).padStart(2, '0')).join('')
   }
 }
 
@@ -176,7 +191,12 @@ function parseMessage(raw: WSMessage): LiveClientMessage | null {
   if (message.type === 'react') {
     if (!isSlug(message.slug) || !isVisitor(message.visitor) || typeof message.reacted !== 'boolean')
       return null
-    return { type: 'react', slug: message.slug, visitor: message.visitor, reacted: message.reacted }
+    return {
+      type: 'react',
+      slug: message.slug,
+      visitor: message.visitor,
+      reacted: message.reacted,
+    }
   }
 
   return null

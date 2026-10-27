@@ -16,8 +16,12 @@ useSeoMeta({
 
 useHead({
   titleTemplate: '',
-  link: [{ rel: 'canonical', href: siteUrl }],
-  meta: [{ name: 'keywords', content: 'Louis Floquet, Software Engineer, Nuxt, Vue, .NET, itslouis.dev' }],
+  link: [
+    { rel: 'canonical', href: siteUrl },
+  ],
+  meta: [
+    { name: 'keywords', content: 'Louis Floquet, Software Engineer, Nuxt, Vue, .NET, itslouis.dev' },
+  ],
   script: [
     {
       type: 'application/ld+json',

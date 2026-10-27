@@ -2,7 +2,9 @@
 const { spotify } = useLanyard()
 
 const trackUrl = computed(() =>
-  spotify.value ? `https://open.spotify.com/track/${spotify.value.track_id}` : '#',
+  spotify.value
+    ? `https://open.spotify.com/track/${spotify.value.track_id}`
+    : '#',
 )
 </script>
 

@@ -5,8 +5,12 @@ defineEmits<{ toggle: [] }>()
 const label = computed(() => {
   if (props.count === null)
     return 'Loading reactions'
-  const people = `${props.count} ${props.count === 1 ? 'person likes' : 'people like'} this post`
-  return props.reacted ? `Remove your thumbs up. ${people}` : `Give a thumbs up. ${people}`
+  const people = `${props.count} ${props.count === 1
+    ? 'person likes'
+    : 'people like'} this post`
+  return props.reacted
+    ? `Remove your thumbs up. ${people}`
+    : `Give a thumbs up. ${people}`
 })
 </script>
 

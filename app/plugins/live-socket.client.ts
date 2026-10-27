@@ -29,7 +29,9 @@ export default defineNuxtPlugin(() => {
 
   onNuxtReady(() => {
     socket = new PartySocket({
-      host: import.meta.dev ? 'localhost:8787' : config.public.partyHost,
+      host: import.meta.dev
+        ? 'localhost:8787'
+        : config.public.partyHost,
       party: 'presence',
       room: 'site',
     })
