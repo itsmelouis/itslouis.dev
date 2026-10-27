@@ -35,7 +35,7 @@
     "ufo": "^1.6.4"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^9.5.1",
+    "@antfu/eslint-config": "^10.0.0",
     "@cloudflare/workers-types": "^5.20261026.1",
     "@iconify-json/carbon": "^1.2.29",
     "@iconify-json/lucide": "^1.2.147",
