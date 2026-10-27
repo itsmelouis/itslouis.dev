@@ -1,0 +1,12 @@
+title: F1 Stats
+description: A Formula 1 season tracker with the race calendar, live countdown to the next Grand Prix, results, and championship standings.
+url: https://github.com/itsmelouis/f1-stats
+image: /images/projects/f1-stats.png
+imageAlt: F1 Stats calendar showing the next Grand Prix and weekend schedule
+year: 2026
+order: 2
+tags:
+  - Nuxt
+  - Nuxt UI
+  - Cloudflare Workers
+icon: i-lucide-flag

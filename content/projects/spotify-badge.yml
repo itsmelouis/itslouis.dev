@@ -4,7 +4,7 @@ url: https://github.com/itsmelouis/spotify-badge
 image: /images/projects/spotify-badge.png
 imageAlt: Dynamic Spotify badge showing the currently playing track
 year: 2026
-order: 2
+order: 3
 tags:
   - TypeScript
   - Cloudflare Workers
