@@ -4,7 +4,7 @@ url: https://github.com/itsmelouis/termmind
 image: /images/projects/termmind.png
 imageAlt: Termmind Mastermind game running in a terminal
 year: 2026
-order: 4
+order: 5
 tags:
   - Rust
   - Ratatui

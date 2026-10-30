@@ -1,0 +1,13 @@
+title: code.itslouis.dev
+description: A browser-only code frame editor powered by Rangi for syntax highlighting, turning source code into shareable PNG and SVG images with themes, backgrounds, and state saved in the URL.
+url: https://github.com/itsmelouis/code.itslouis.dev
+image: /images/projects/code-itslouis-dev.png
+imageAlt: code.itslouis.dev editor framing a TypeScript snippet over a night city background
+year: 2026
+order: 3
+tags:
+  - Nuxt
+  - Rangi
+  - Tailwind CSS
+  - Cloudflare Pages
+icon: i-lucide-code-xml
