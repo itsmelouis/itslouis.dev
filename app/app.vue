@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useSeoMeta({
-  description: 'Software engineer finishing my master\'s degree. I build fast, clean interfaces with Nuxt and Vue, and backend systems with .NET.',
+  description: 'Software Engineer & AI Automation at Ponera. I digitize and automate business processes with AI, and build fast, clean interfaces with Nuxt and Vue, backed by .NET and PHP.',
   ogSiteName: 'itslouis.dev',
   ogType: 'website',
   twitterCard: 'summary_large_image',

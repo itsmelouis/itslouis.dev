@@ -2,15 +2,15 @@
 const config = useRuntimeConfig()
 const siteUrl = config.public.siteUrl
 
-const description = 'Software engineer finishing my master\'s degree. I build fast, clean interfaces with Nuxt and Vue, and backend systems with .NET.'
+const description = 'Software Engineer & AI Automation at Ponera. I digitize and automate business processes with AI, and build fast, clean interfaces with Nuxt and Vue, backed by .NET and PHP.'
 
 useSeoMeta({
-  title: 'Louis F. - Software Engineer',
+  title: 'Louis F. - Software Engineer & AI Automation',
   description,
-  ogTitle: 'Louis F. - Software Engineer',
+  ogTitle: 'Louis F. - Software Engineer & AI Automation',
   ogDescription: description,
   ogUrl: siteUrl,
-  twitterTitle: 'Louis F. - Software Engineer',
+  twitterTitle: 'Louis F. - Software Engineer & AI Automation',
   twitterDescription: description,
 })
 
@@ -20,7 +20,7 @@ useHead({
     { rel: 'canonical', href: siteUrl },
   ],
   meta: [
-    { name: 'keywords', content: 'Louis Floquet, Software Engineer, Nuxt, Vue, .NET, itslouis.dev' },
+    { name: 'keywords', content: 'Louis Floquet, Software Engineer, Ponera, AI automation, Nuxt, Vue, .NET, PHP, itslouis.dev' },
   ],
   script: [
     {
@@ -31,7 +31,12 @@ useHead({
         'name': 'Louis Floquet',
         'alternateName': 'Louis F.',
         'url': siteUrl,
-        'jobTitle': 'Software Engineer',
+        'jobTitle': 'Software Engineer & AI Automation',
+        'worksFor': {
+          '@type': 'Organization',
+          'name': 'Ponera',
+          'url': 'https://ponera.com',
+        },
         'sameAs': [
           'https://github.com/itsmelouis',
         ],
@@ -47,9 +52,15 @@ useHead({
       Hey, I'm Louis F.
     </h1>
     <p class="text-lg text-neutral-600 dark:text-neutral-300">
-      Software engineer finishing my master's degree, currently interning at Altazion where I build e-commerce and retail
-      tech, mostly in C#/.NET. I work across the stack, but frontend is where I'm most at home. Nuxt and Vue are my
-      daily drivers, and I reach for .NET when the problem calls for it.
+      Software Engineer & AI Automation at
+      <!-- eslint-disable-next-line vue/singleline-html-element-content-newline -->
+      <AppLink to="https://ponera.com" target="_blank">Ponera</AppLink>. I'm an internal forward-deployed engineer:
+      I sit with each team, digitize their processes and automate as much as possible with AI, including clusters
+      of OpenClaw agents.
+    </p>
+    <p class="text-lg text-neutral-600 dark:text-neutral-300">
+      I work across the stack, but frontend is where I'm most at home. Nuxt and Vue are my daily drivers, and I reach
+      for .NET or PHP when the problem calls for it.
     </p>
     <p class="text-lg text-neutral-600 dark:text-neutral-300">
       I care about the details. Clean APIs, fast interfaces, code that doesn't need a comment to explain itself.
