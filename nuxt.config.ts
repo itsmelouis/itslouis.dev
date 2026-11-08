@@ -45,6 +45,7 @@ export default defineNuxtConfig({
             'bash',
             'yaml',
             'json',
+            'jsonc',
             'css',
           ],
         },
