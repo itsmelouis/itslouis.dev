@@ -35,7 +35,7 @@ useHead({
         'worksFor': {
           '@type': 'Organization',
           'name': 'Ponera',
-          'url': 'https://ponera.com',
+          'url': 'https://ponera.fr',
         },
         'sameAs': [
           'https://github.com/itsmelouis',
@@ -54,7 +54,7 @@ useHead({
     <p class="text-lg text-neutral-600 dark:text-neutral-300">
       Software Engineer & AI Automation at
       <!-- eslint-disable-next-line vue/singleline-html-element-content-newline -->
-      <AppLink to="https://ponera.com" target="_blank">Ponera</AppLink>. I'm an internal forward-deployed engineer:
+      <AppLink to="https://ponera.fr" target="_blank">Ponera</AppLink>. I'm an internal forward-deployed engineer:
       I sit with each team, digitize their processes and automate as much as possible with AI, including clusters
       of OpenClaw agents.
     </p>
